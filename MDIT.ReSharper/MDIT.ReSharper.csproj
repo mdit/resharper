@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyTitle>MDIT.ReSharper</AssemblyTitle>
+    <AssemblyDescription>Provides standard ReSharper settings.</AssemblyDescription>
+    <TargetFramework>net472</TargetFramework>
+    <BuildOutputTargetFolder>DotFiles\Extensions\MDIT.ReSharper</BuildOutputTargetFolder>
+    <GeneratePackages>true</GeneratePackages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="*.DotSettings" PackagePath="DotFiles\Extensions\MDIT.ReSharper\settings\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Wave" Version="[201.0,)" />
+    <PackageReference Include="JetBrains.ReSharper.SDK" Version="2020.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <!-- Disable symbols package generation -->
+  <PropertyGroup>
+    <IncludeSymbols>false</IncludeSymbols>
+    <IncludeSource>false</IncludeSource>
+  </PropertyGroup>
+
+  <Import Project="..\Nuget.props" />
+
+</Project>

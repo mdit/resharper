@@ -1,0 +1,13 @@
+<!-- This file adds properties required for generating pre-release NuGet packages -->
+<Project>
+  <Import Project="Nuget.props" />
+
+  <PropertyGroup>
+    <GeneratePreReleasePackages Condition="'$(GeneratePreReleasePackages)' == ''">false</GeneratePreReleasePackages>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(GeneratePreReleasePackages)' == 'true'">
+    <Version>$(Version)-pre$(BuildTimeStamp)</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+</Project>

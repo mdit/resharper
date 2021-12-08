@@ -1,0 +1,13 @@
+<!-- This file adds properties for generating NuGet packages -->
+<Project>
+  <PropertyGroup>
+    <GeneratePackageOnBuild Condition="'$(GeneratePackages)' == 'true'">true</GeneratePackageOnBuild>
+    <PackageOutputPath>$(RepositoryRootDirectory)Releases\</PackageOutputPath>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Description Condition="'$(Description)' == ''">$(AssemblyDescription)</Description>
+    <Version Condition="'$(Version)' == ''">$(AssemblyVersion)</Version>
+    <Authors Condition="'$(Authors)' == ''">$(Company)</Authors>
+    <Title Condition="'$(Title)' == ''">$(AssemblyTitle)</Title>
+  </PropertyGroup>
+</Project>

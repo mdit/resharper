@@ -1,0 +1,10 @@
+<!-- This file adds common properties used by a number of build steps -->
+<Project>
+  <PropertyGroup>
+    <Company>MDIT Solutions Limited</Company>
+    <Copyright>Copyright (c) $(Company) $([System.DateTime]::Now.Year)</Copyright>
+    <NuGetPackageRoot Condition="'$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <BuildTimeStamp Condition="'$(BuildTimeStamp)' == ''">$([System.DateTime]::Now.ToString('yyyyMMddHHmm'))</BuildTimeStamp>
+    <IsTeamCityBuild Condition="'$(TEAMCITY_VERSION)' != ''">true</IsTeamCityBuild>
+  </PropertyGroup>
+</Project>
